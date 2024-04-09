@@ -13,7 +13,7 @@ from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
 
-print(settings.database_username)
+
 
 #models.Base.metadata.create_all(bind=engine)
 
@@ -39,7 +39,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "Hello Friend, Welcome"}   
+    return {"message": "New Beginnings"}   
 
 
 #my_posts = [{"title": "title of post 1", "content": "content of post 1", "id":1}, 
