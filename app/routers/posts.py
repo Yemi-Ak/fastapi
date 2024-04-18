@@ -2,7 +2,7 @@ from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
 from .. import models, schemas, utils
 from sqlalchemy.orm import Session
 from ..database import get_db
-from . import oauth2
+from .. import oauth2
 from typing import Optional, List
 from sqlalchemy import func
 
@@ -79,6 +79,7 @@ def delete_post(id: int, db: Session = Depends(get_db), current_user:int = Depen
     
     if post.owner_id != current_user.id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=f"Not Authorized to Perform Requested Action")
+    
     post_query.delete(synchronize_session=False)
     db.commit()
 
