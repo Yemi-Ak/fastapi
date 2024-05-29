@@ -39,7 +39,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "New Beginnings"}   
+    return {"message": "New System"}   
 
 
 #my_posts = [{"title": "title of post 1", "content": "content of post 1", "id":1}, 
